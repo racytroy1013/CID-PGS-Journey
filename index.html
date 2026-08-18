@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learner Success and Future Readiness — SDO Bataan City PGS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-top">
+    <div class="badge">
+      <span>DepEd</span><span>SDO</span><span>Bataan City</span>
+    </div>
+    <div class="hero-title">
+      <div class="hero-eyebrow">Schools Division Office · Performance Governance System</div>
+      <h1>Learner Success<br>and Future Readiness</h1>
+      <p class="hero-sub">The Division's roadmap for building learners who are ready for the world beyond the classroom — tracked from 2025 to 2028 through programs, recognition, research, and trainers.</p>
+    </div>
+    <div class="badge pgs">
+      <span>PGS</span><span>Performance</span><span>Governance</span>
+    </div>
+  </div>
+
+  <nav class="nav-pills">
+    <a href="#journey">The Journey</a>
+    <a href="#strategy">Strategy Map</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#scorecard">Scorecard</a>
+    <a href="#action">In-Action</a>
+    <a href="#orp">ORP</a>
+    <a href="#org">Org Chart</a>
+  </nav>
+</header>
+
+<main class="board">
+
+  <section class="road-wrap" id="journey">
+    <div class="hero-eyebrow">The Journey</div>
+    <h2>Governance System, Year by Year</h2>
+    <p class="note" style="margin-top:6px;">Select a year — the rocket climbs the road to meet it.</p>
+
+    <div class="year-controls" role="group" aria-label="Select year">
+      <button type="button" class="year-btn" data-year="2025">2025</button>
+      <button type="button" class="year-btn" data-year="2026">2026</button>
+      <button type="button" class="year-btn" data-year="2027">2027</button>
+      <button type="button" class="year-btn" data-year="2028">2028</button>
+    </div>
+
+    <svg class="road-svg" viewBox="0 0 520 640" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="spaceGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--space-deep)"/>
+          <stop offset="32%" stop-color="var(--space-mid)"/>
+          <stop offset="58%" stop-color="#3E75A8"/>
+          <stop offset="80%" stop-color="#8FCDEA"/>
+          <stop offset="100%" stop-color="#CFEFFB"/>
+        </linearGradient>
+        <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#74B75F"/>
+          <stop offset="100%" stop-color="#3F7A47"/>
+        </linearGradient>
+      </defs>
+
+      <!-- backdrop: space up top, Earth's ground down at 2025 -->
+      <rect x="2" y="2" width="516" height="636" rx="18" fill="url(#spaceGrad)" stroke="var(--midnight)" stroke-width="2"/>
+
+      <g class="stars">
+        <circle cx="52" cy="34" r="1.6" fill="#fff" opacity="0.9"/>
+        <circle cx="98" cy="72" r="1.1" fill="#fff" opacity="0.7"/>
+        <circle cx="150" cy="30" r="1.4" fill="#fff" opacity="0.85"/>
+        <circle cx="210" cy="60" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="260" cy="24" r="1.6" fill="#fff" opacity="0.9"/>
+        <circle cx="300" cy="90" r="1.2" fill="#fff" opacity="0.7"/>
+        <circle cx="350" cy="46" r="1.4" fill="#fff" opacity="0.85"/>
+        <circle cx="400" cy="20" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="430" cy="110" r="1.6" fill="#fff" opacity="0.9"/>
+        <circle cx="470" cy="150" r="1.2" fill="#fff" opacity="0.7"/>
+        <circle cx="40" cy="150" r="1.3" fill="#fff" opacity="0.8"/>
+        <circle cx="480" cy="40" r="1.1" fill="#fff" opacity="0.65"/>
+        <circle cx="230" cy="140" r="1.5" fill="#fff" opacity="0.85"/>
+        <circle cx="120" cy="180" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="380" cy="200" r="1.3" fill="#fff" opacity="0.75"/>
+        <circle cx="60" cy="230" r="1.1" fill="#fff" opacity="0.6"/>
+        <circle cx="300" cy="250" r="1.2" fill="#fff" opacity="0.6"/>
+        <circle cx="440" cy="260" r="1" fill="#fff" opacity="0.5"/>
+        <circle cx="180" cy="230" r="1" fill="#fff" opacity="0.55"/>
+      </g>
+
+      <!-- Earth's ground, at the 2025 baseline -->
+      <path d="M 2 640 L 2 598 C 130 552 400 552 518 598 L 518 640 Z" fill="url(#groundGrad)"/>
+      <path d="M 2 602 C 130 556 400 556 518 602" fill="none" stroke="#2F5C38" stroke-width="3" opacity="0.55"/>
+
+      <!-- hidden measuring paths: same geometry as the visible road, used to find each year's distance along it -->
+      <path id="segA" d="M 150 590 C 320 570, 380 500, 350 460" style="display:none"/>
+      <path id="segB" d="M 150 590 C 320 570, 380 500, 350 460 C 300 400, 120 360, 150 300" style="display:none"/>
+
+      <!-- climbing road: 2025 baseline at the bottom, rising to 2028 at the top -->
+      <path id="roadPath" class="road-path" d="M 150 590 C 320 570, 380 500, 350 460 C 300 400, 120 360, 150 300 C 180 240, 360 210, 340 140" />
+      <path class="road-dash" d="M 150 590 C 320 570, 380 500, 350 460 C 300 400, 120 360, 150 300 C 180 240, 360 210, 340 140" />
+
+      <!-- 2025 — baseline, bottom of the climb -->
+      <g class="milestone" id="m2025" style="transition-delay:.05s">
+        <circle class="milestone-dot" cx="150" cy="590" r="10" fill="#F0B234"/>
+        <rect class="milestone-pill" x="166" y="569" width="158" height="42" rx="9"/>
+        <text x="180" y="587" class="milestone-year">2025</text>
+        <text x="180" y="603" class="milestone-label">Baseline set</text>
+        <text x="166" y="624" class="baseline-tag">START OF THE CLIMB</text>
+      </g>
+
+      <!-- 2026 -->
+      <g class="milestone" id="m2026" style="transition-delay:.22s">
+        <circle class="milestone-dot" cx="350" cy="460" r="9" fill="#F0B234"/>
+        <rect class="milestone-pill" x="184" y="439" width="150" height="42" rx="9"/>
+        <text x="198" y="457" class="milestone-year">2026</text>
+        <text x="198" y="473" class="milestone-label">Programs launched</text>
+      </g>
+
+      <!-- 2027 -->
+      <g class="milestone" id="m2027" style="transition-delay:.38s">
+        <circle class="milestone-dot" cx="150" cy="300" r="9" fill="#F0B234"/>
+        <rect class="milestone-pill" x="166" y="279" width="158" height="42" rx="9"/>
+        <text x="180" y="297" class="milestone-year">2027</text>
+        <text x="180" y="313" class="milestone-label">Recognition earned</text>
+      </g>
+
+      <!-- 2028 — summit -->
+      <g class="milestone" id="m2028" style="transition-delay:.54s">
+        <circle class="milestone-dot" cx="340" cy="140" r="10" fill="#E98B93"/>
+        <rect class="milestone-pill" x="174" y="118" width="150" height="42" rx="9"/>
+        <text x="188" y="136" class="milestone-year">2028</text>
+        <text x="188" y="152" class="milestone-label">Readiness scaled up</text>
+      </g>
+
+      <!-- rocket — repositioned by script as each year is selected -->
+      <g class="rocket" id="rocket">
+        <path class="flame" d="M -7 26 L 0 46 L 7 26 Z" fill="var(--sunflower)"/>
+        <path d="M -6 24 L 0 30 L 6 24 Z" fill="#F4703E"/>
+        <path d="M 0 -42 C 11 -42 15 -18 15 2 C 15 16 9 24 0 28 C -9 24 -15 16 -15 2 C -15 -18 -11 -42 0 -42 Z" fill="var(--paper)" stroke="var(--midnight)" stroke-width="2.5"/>
+        <path d="M -13 -6 C -13 -20 -8 -34 0 -40 C 8 -34 13 -20 13 -6 Z" fill="var(--rocket-red)"/>
+        <circle cx="0" cy="-8" r="6" fill="var(--sunflower)" stroke="var(--midnight)" stroke-width="1.5"/>
+        <path d="M -15 4 L -25 18 L -13 16 Z" fill="var(--rocket-red)" stroke="var(--midnight)" stroke-width="1.5"/>
+        <path d="M 15 4 L 25 18 L 13 16 Z" fill="var(--rocket-red)" stroke="var(--midnight)" stroke-width="1.5"/>
+      </g>
+
+      <!-- year tag — travels with the rocket, always shows which year it's currently at -->
+      <g id="rocketTag" class="rocket-tag">
+        <rect x="-24" y="-11" width="48" height="20" rx="10"/>
+        <text x="0" y="3" text-anchor="middle">2025</text>
+      </g>
+
+      <!-- fireworks, populated by script when the rocket reaches 2028 -->
+      <g id="fireworks"></g>
+    </svg>
+
+    <p class="note" style="margin-top:18px;">Adjust the achieved / target numbers below — the percentages update live for each year.</p>
+    <div class="year-scoreboard">
+      <div class="year-scoreboard-title">2025</div>
+      <div class="scoreboard">
+      <div class="score-tile">
+        <div class="letter">P</div>
+        <div class="pct">100%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="24" min="0" aria-label="Programs achieved 2025">
+          <span>/</span>
+          <input type="number" class="den-input" value="24" min="0" aria-label="Programs target 2025">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:100%; background:var(--midnight);"></div></div>
+        <div class="name">Programs</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--clay);">R</div>
+        <div class="pct">8%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="2" min="0" aria-label="Recognition achieved 2025">
+          <span>/</span>
+          <input type="number" class="den-input" value="24" min="0" aria-label="Recognition target 2025">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:8%; background:var(--clay);"></div></div>
+        <div class="name">Recognition</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--meadow-dark);">R</div>
+        <div class="pct">100%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="24" min="0" aria-label="Research achieved 2025">
+          <span>/</span>
+          <input type="number" class="den-input" value="24" min="0" aria-label="Research target 2025">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:100%; background:var(--meadow-dark);"></div></div>
+        <div class="name">Research</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--road);">T</div>
+        <div class="pct">54%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="13" min="0" aria-label="Trainers achieved 2025">
+          <span>/</span>
+          <input type="number" class="den-input" value="24" min="0" aria-label="Trainers target 2025">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:54%; background:var(--road);"></div></div>
+        <div class="name">Trainers</div>
+      </div>
+      </div>
+    </div>
+    <div class="year-scoreboard">
+      <div class="year-scoreboard-title">2026</div>
+      <div class="scoreboard">
+      <div class="score-tile">
+        <div class="letter">P</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Programs achieved 2026">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Programs target 2026">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--midnight);"></div></div>
+        <div class="name">Programs</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--clay);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Recognition achieved 2026">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Recognition target 2026">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--clay);"></div></div>
+        <div class="name">Recognition</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--meadow-dark);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Research achieved 2026">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Research target 2026">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--meadow-dark);"></div></div>
+        <div class="name">Research</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--road);">T</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Trainers achieved 2026">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Trainers target 2026">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--road);"></div></div>
+        <div class="name">Trainers</div>
+      </div>
+      </div>
+    </div>
+    <div class="year-scoreboard">
+      <div class="year-scoreboard-title">2027</div>
+      <div class="scoreboard">
+      <div class="score-tile">
+        <div class="letter">P</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Programs achieved 2027">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Programs target 2027">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--midnight);"></div></div>
+        <div class="name">Programs</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--clay);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Recognition achieved 2027">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Recognition target 2027">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--clay);"></div></div>
+        <div class="name">Recognition</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--meadow-dark);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Research achieved 2027">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Research target 2027">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--meadow-dark);"></div></div>
+        <div class="name">Research</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--road);">T</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Trainers achieved 2027">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Trainers target 2027">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--road);"></div></div>
+        <div class="name">Trainers</div>
+      </div>
+      </div>
+    </div>
+    <div class="year-scoreboard">
+      <div class="year-scoreboard-title">2028</div>
+      <div class="scoreboard">
+      <div class="score-tile">
+        <div class="letter">P</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Programs achieved 2028">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Programs target 2028">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--midnight);"></div></div>
+        <div class="name">Programs</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--clay);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Recognition achieved 2028">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Recognition target 2028">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--clay);"></div></div>
+        <div class="name">Recognition</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--meadow-dark);">R</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Research achieved 2028">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Research target 2028">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--meadow-dark);"></div></div>
+        <div class="name">Research</div>
+      </div>
+      <div class="score-tile">
+        <div class="letter" style="background:var(--road);">T</div>
+        <div class="pct">0%</div>
+        <div class="frac-inputs">
+          <input type="number" class="num-input" value="0" min="0" aria-label="Trainers achieved 2028">
+          <span>/</span>
+          <input type="number" class="den-input" value="0" min="0" aria-label="Trainers target 2028">
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:0%; background:var(--road);"></div></div>
+        <div class="name">Trainers</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="strategy">
+    <h2>Strategy Map</h2>
+    <div class="pyramid">
+      <div class="p-row cols-2">
+        <div class="p-box p-outcome">Malusog at Marangal na Mag-aaral at Mamamayan</div>
+        <div class="p-box p-outcome">Maginhawa at Panatag na Buhay</div>
+      </div>
+      <div class="p-row">
+        <div class="p-box p-charter">Client's Charter — quality, accessible, relevant &amp; liberating basic education</div>
+      </div>
+      <div class="p-row cols-3">
+        <div class="p-box p-pillar">Learner Success &amp; Future Readiness</div>
+        <div class="p-box p-pillar">Human Resource Development</div>
+        <div class="p-box p-pillar">Learners' Well-being</div>
+      </div>
+      <div class="p-row">
+        <div class="p-box p-enable">Sports &amp; Learning Environment Development</div>
+      </div>
+      <div class="p-row">
+        <div class="p-box p-enable alt">Institutional Excellence &amp; Digital Governance</div>
+      </div>
+    </div>
+    <p class="note">The strategic pyramid behind every initiative on this page — from the outcomes at the top down to the enabling systems that carry them.</p>
+  </section>
+
+  <section class="card" id="roadmap">
+    <h2 style="font-size:18px;">Roadmap</h2>
+    <table class="data">
+      <caption>Learner Success &amp; Future Readiness — Roadmap</caption>
+      <thead><tr><th>Focus</th><th>2025</th><th>2027</th></tr></thead>
+      <tbody>
+        <tr><td>Skills programs</td><td>Pilot rollout</td><td>Division-wide</td></tr>
+        <tr><td>Career pathing</td><td>Baseline set</td><td>Full coverage</td></tr>
+        <tr><td>Digital readiness</td><td>Partial access</td><td>All schools</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" id="scorecard">
+    <h2 style="font-size:18px;">Scorecard</h2>
+    <table class="data">
+      <caption>Learner Success &amp; Future Readiness Scorecard</caption>
+      <thead><tr><th>Objective</th><th>Baseline</th><th>2024</th></tr></thead>
+      <tbody>
+        <tr><td>Schools qualifying for skills/academic competitions</td><td>69% (16/24)</td><td class="stat-good">55% (13/24)</td></tr>
+        <tr><td>Senior high schools with accredited programs</td><td>58% (2/2)</td><td class="stat-good">100% (2/2)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" id="action">
+    <h2 style="font-size:18px;">In-Action</h2>
+    <div class="collage">
+      <div class="shot s1">Field visit</div>
+      <div class="shot s2">Training day</div>
+      <div class="shot s3">Learners' showcase</div>
+      <div class="shot s4">Awarding rites</div>
+    </div>
+    <p class="note">Snapshots from the programs that feed the scorecard.</p>
+  </section>
+
+  <section class="card" id="orp">
+    <h2 style="font-size:18px;">ORP (Operations Review Protocol)</h2>
+    <ul class="orp-list">
+      <li><span class="check"></span>Client's charter posted &amp; visible</li>
+      <li><span class="check"></span>Scorecard updated quarterly</li>
+      <li><span class="check"></span>Roadmap reviewed with committee</li>
+      <li><span class="check"></span>Documentation on file</li>
+    </ul>
+  </section>
+
+  <section class="orgchart" id="org">
+    <h2>Organizational Chart</h2>
+
+    <div class="tier">
+      <div class="node"><div class="avatar">CH</div><div class="role">Champion</div></div>
+    </div>
+    <div class="tier">
+      <div class="node"><div class="avatar">DP</div><div class="role">Deputy</div></div>
+    </div>
+    <div class="tier">
+      <div class="node"><div class="avatar">D1</div><div class="role">Documenter</div></div>
+      <div class="node"><div class="avatar">D2</div><div class="role">Documenter</div></div>
+      <div class="node"><div class="avatar">D3</div><div class="role">Documenter</div></div>
+    </div>
+    <div class="tier tier-committee">
+      <div class="node" style="width:56px;"><div class="avatar">01</div></div>
+      <div class="node" style="width:56px;"><div class="avatar">02</div></div>
+      <div class="node" style="width:56px;"><div class="avatar">03</div></div>
+      <div class="node" style="width:56px;"><div class="avatar">04</div></div>
+      <div class="node" style="width:56px;"><div class="avatar">05</div></div>
+      <div class="node" style="width:56px;"><div class="avatar">06</div></div>
+    </div>
+    <div class="tier">
+      <div class="node"><div class="avatar" style="background:var(--sunflower-dark); border-color:var(--midnight);">SB</div><div class="role">Scoreboard OIC</div></div>
+    </div>
+
+    <div class="legend">
+      <div class="item"><span class="dot p">P</span>Programs</div>
+      <div class="item"><span class="dot r1">R</span>Recognition</div>
+      <div class="item"><span class="dot r2">R</span>Research</div>
+      <div class="item"><span class="dot t">T</span>Trainers</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Schools Division Office · Bataan City — Performance Governance System · Learner Success and Future Readiness</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
