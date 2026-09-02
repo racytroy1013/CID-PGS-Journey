@@ -12,8 +12,8 @@
 
 <header class="hero" id="top">
   <div class="hero-top">
-    <div class="badge">
-      <span>DepEd</span><span>SDO</span><span>Bataan City</span>
+    <div class="badge seal">
+      <img src="assets/deped-sdo-balanga-seal.png" alt="Department of Education, Schools Division Office of Balanga City seal">
     </div>
     <div class="hero-title">
       <div class="hero-eyebrow">Schools Division Office · Performance Governance System</div>
@@ -21,7 +21,7 @@
       <p class="hero-sub">The Division's roadmap for building learners who are ready for the world beyond the classroom — tracked from 2025 to 2028 through programs, recognition, research, and trainers.</p>
     </div>
     <div class="badge pgs">
-      <span>PGS</span><span>Performance</span><span>Governance</span>
+      <img src="assets/pgs-logo.png" alt="Performance Governance System logo">
     </div>
   </div>
 
@@ -30,8 +30,8 @@
     <a href="#strategy">Strategy Map</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#scorecard">Scorecard</a>
-    <a href="#action">In-Action</a>
     <a href="#orp">ORP</a>
+    <a href="#action">In-Action</a>
     <a href="#org">Org Chart</a>
   </nav>
 </header>
@@ -104,7 +104,7 @@
 
       <!-- 2025 — baseline, bottom of the climb -->
       <g class="milestone" id="m2025" style="transition-delay:.05s">
-        <circle class="milestone-dot" cx="150" cy="590" r="10" fill="#F0B234"/>
+        <circle class="milestone-dot" cx="150" cy="590" r="10" fill="var(--sunflower)"/>
         <rect class="milestone-pill" x="166" y="569" width="158" height="42" rx="9"/>
         <text x="180" y="587" class="milestone-year">2025</text>
         <text x="180" y="603" class="milestone-label">Baseline set</text>
@@ -113,7 +113,7 @@
 
       <!-- 2026 -->
       <g class="milestone" id="m2026" style="transition-delay:.22s">
-        <circle class="milestone-dot" cx="350" cy="460" r="9" fill="#F0B234"/>
+        <circle class="milestone-dot" cx="350" cy="460" r="9" fill="var(--sunflower)"/>
         <rect class="milestone-pill" x="184" y="439" width="150" height="42" rx="9"/>
         <text x="198" y="457" class="milestone-year">2026</text>
         <text x="198" y="473" class="milestone-label">Programs launched</text>
@@ -121,7 +121,7 @@
 
       <!-- 2027 -->
       <g class="milestone" id="m2027" style="transition-delay:.38s">
-        <circle class="milestone-dot" cx="150" cy="300" r="9" fill="#F0B234"/>
+        <circle class="milestone-dot" cx="150" cy="300" r="9" fill="var(--sunflower)"/>
         <rect class="milestone-pill" x="166" y="279" width="158" height="42" rx="9"/>
         <text x="180" y="297" class="milestone-year">2027</text>
         <text x="180" y="313" class="milestone-label">Recognition earned</text>
@@ -129,7 +129,7 @@
 
       <!-- 2028 — summit -->
       <g class="milestone" id="m2028" style="transition-delay:.54s">
-        <circle class="milestone-dot" cx="340" cy="140" r="10" fill="#E98B93"/>
+        <circle class="milestone-dot" cx="340" cy="140" r="10" fill="var(--clay)"/>
         <rect class="milestone-pill" x="174" y="118" width="150" height="42" rx="9"/>
         <text x="188" y="136" class="milestone-year">2028</text>
         <text x="188" y="152" class="milestone-label">Readiness scaled up</text>
@@ -405,25 +405,38 @@
     </table>
   </section>
 
-  <section class="card" id="action">
-    <h2 style="font-size:18px;">In-Action</h2>
-    <div class="collage">
-      <div class="shot s1">Field visit</div>
-      <div class="shot s2">Training day</div>
-      <div class="shot s3">Learners' showcase</div>
-      <div class="shot s4">Awarding rites</div>
-    </div>
-    <p class="note">Snapshots from the programs that feed the scorecard.</p>
-  </section>
-
   <section class="card" id="orp">
     <h2 style="font-size:18px;">ORP (Operations Review Protocol)</h2>
-    <ul class="orp-list">
-      <li><span class="check"></span>Client's charter posted &amp; visible</li>
-      <li><span class="check"></span>Scorecard updated quarterly</li>
-      <li><span class="check"></span>Roadmap reviewed with committee</li>
-      <li><span class="check"></span>Documentation on file</li>
-    </ul>
+    <p class="note" style="margin-top:0;">The monthly Operations Review Protocol scorecard, as presented each month.</p>
+    <div class="month-tabs" id="orpTabs" role="group" aria-label="Select month for ORP document">
+      <button type="button" class="month-btn" data-month="feb">Feb</button>
+      <button type="button" class="month-btn" data-month="mar">Mar</button>
+      <button type="button" class="month-btn" data-month="apr">Apr</button>
+      <button type="button" class="month-btn" data-month="may">May</button>
+      <button type="button" class="month-btn" data-month="jun">Jun</button>
+      <button type="button" class="month-btn" data-month="jul">Jul</button>
+      <button type="button" class="month-btn" data-month="aug">Aug</button>
+    </div>
+    <div class="doc-image-wrap">
+      <img id="orpImage" alt="Operations Review Protocol document for the selected month" loading="lazy">
+    </div>
+  </section>
+
+  <section class="card" id="action">
+    <h2 style="font-size:18px;">In-Action</h2>
+    <p class="note" style="margin-top:0;">Photo documentation from each month's CID Unit meeting.</p>
+    <div class="month-tabs" id="actionTabs" role="group" aria-label="Select month for In-Action photos">
+      <button type="button" class="month-btn" data-month="feb">Feb</button>
+      <button type="button" class="month-btn" data-month="mar">Mar</button>
+      <button type="button" class="month-btn" data-month="apr">Apr</button>
+      <button type="button" class="month-btn" data-month="may">May</button>
+      <button type="button" class="month-btn" data-month="jun">Jun</button>
+      <button type="button" class="month-btn" data-month="jul">Jul</button>
+      <button type="button" class="month-btn" data-month="aug">Aug</button>
+    </div>
+    <div class="doc-image-wrap">
+      <img id="actionImage" alt="In-Action photo documentation for the selected month" loading="lazy">
+    </div>
   </section>
 
   <section class="orgchart" id="org">

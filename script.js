@@ -170,3 +170,39 @@ const road = document.querySelector('.road-wrap');
       inp.addEventListener('input', () => updateScoreTile(tile));
     });
   });
+  /* Monthly document galleries — In-Action photos & ORP scorecards */
+  function wireMonthGallery(tabsId, imgId, imageMap, defaultMonth){
+    const tabs = document.getElementById(tabsId);
+    const img = document.getElementById(imgId);
+    if(!tabs || !img) return;
+    img.src = imageMap[defaultMonth];
+    tabs.querySelectorAll('.month-btn').forEach(btn => {
+      if(btn.dataset.month === defaultMonth) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        tabs.querySelectorAll('.month-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        img.src = imageMap[btn.dataset.month];
+      });
+    });
+  }
+
+  const actionImages = {
+    feb: 'assets/feb_action.jpg',
+    mar: 'assets/mar_action.jpg',
+    apr: 'assets/apr_action.jpg',
+    may: 'assets/may_action.jpg',
+    jun: 'assets/jun_action.jpg',
+    jul: 'assets/jul_action.jpg',
+    aug: 'assets/aug_action.jpg'
+  };
+  const orpImages = {
+    feb: 'assets/feb_orp.jpg',
+    mar: 'assets/mar_orp.jpg',
+    apr: 'assets/apr_orp.jpg',
+    may: 'assets/may_orp.jpg',
+    jun: 'assets/jun_orp.jpg',
+    jul: 'assets/jul_orp.jpg',
+    aug: 'assets/aug_orp.jpg'
+  };
+  wireMonthGallery('actionTabs', 'actionImage', actionImages, 'aug');
+  wireMonthGallery('orpTabs', 'orpImage', orpImages, 'aug');
