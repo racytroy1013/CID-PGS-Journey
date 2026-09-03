@@ -112,9 +112,12 @@
     object-fit:contain;
     filter:drop-shadow(0 6px 14px rgba(15,45,82,0.25));
   }
+  .badge.pgs{
+    width:78px; height:78px;
+  }
   .badge.pgs img{
-    width:100%;
-    height:100%;
+    width:92%;
+    height:92%;
     object-fit:contain;
   }
 
@@ -658,4 +661,49 @@
     color:var(--ink-soft);
     font-size:12px;
     font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* ================= Mobile ================= */
+  @media (max-width:640px){
+    .hero{ padding:36px 5vw 48px; }
+
+    /* Badges flank the hero on desktop; on mobile they sit as a
+       top row (seal left, PGS right) with the title wrapping to
+       its own full-width line underneath, instead of squeezing it. */
+    .hero-top{ flex-wrap:wrap; row-gap:18px; }
+    .hero-top .badge.seal{ order:1; }
+    .hero-top .badge.pgs{ order:2; }
+    .hero-title{ order:3; flex:0 0 100%; }
+
+    .hero-eyebrow{ font-size:10px; letter-spacing:2px; }
+    .hero-title h1{ font-size:clamp(26px, 8.5vw, 38px); }
+    .hero-sub{ font-size:13.5px; margin-top:14px; }
+
+    .nav-pills{ margin-top:28px; gap:8px; }
+    .nav-pills a{ font-size:11px; padding:7px 12px; }
+
+    .board{ padding:36px 5vw 24px; gap:24px; }
+
+    .card{ padding:22px 18px 20px; }
+    .card h2{ font-size:19px; margin-bottom:14px; padding-bottom:10px; }
+
+    /* Three-across strategy rows get cramped under ~380px of usable
+       width; stack them so each pillar/outcome stays readable. */
+    .p-row.cols-3{ grid-template-columns:1fr; }
+
+    table.data{ font-size:11.5px; }
+
+    .orgchart{ padding:20px 14px 24px; }
+    .node{ width:64px; }
+    .avatar{ width:44px; height:44px; font-size:11px; }
+    .node .role{ font-size:8.5px; }
+  }
+
+  @media (max-width:400px){
+    .badge{ width:60px; height:60px; }
+    .badge.seal{ width:60px; height:60px; }
+    .badge.pgs{ width:60px; height:60px; }
+    .scoreboard{ grid-template-columns:1fr 1fr; gap:8px; }
+    .legend{ grid-template-columns:1fr; }
+    .year-btn, .month-btn{ padding:7px 12px; font-size:11px; }
   }
