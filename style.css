@@ -287,6 +287,12 @@
     color:var(--ink);
   }
   table.data tr:last-child td{ border-bottom:none; }
+  table.data tfoot td{
+    border-top:2px solid var(--midnight);
+    border-bottom:none;
+    background:var(--paper);
+    padding-top:8px;
+  }
   .stat-good{ color:var(--meadow-dark); font-family:'IBM Plex Mono',monospace; font-weight:600; }
 
   /* In Action collage */
