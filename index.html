@@ -502,6 +502,28 @@
   .month-btn:hover{ transform:translateY(-1px); }
   .month-btn.active{ background:var(--sunflower); color:#fff; border-color:var(--sunflower); }
 
+  /* Report links */
+  .report-link{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    background:#FFFFFF;
+    border:1.5px solid var(--sunflower);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    color:var(--midnight);
+    font-weight:700;
+    font-size:14px;
+    line-height:1.4;
+    letter-spacing:0.3px;
+    transition:background .18s ease, color .18s ease, transform .15s ease;
+  }
+  .report-link:hover{ background:var(--sunflower); color:#FFFFFF; transform:translateY(-1px); }
+  .report-link:focus-visible{ outline:3px solid var(--midnight); outline-offset:2px; }
+  .report-link .ico{ flex:0 0 auto; font-size:22px; }
+  .report-link .arrow{ margin-left:auto; flex:0 0 auto; font-size:18px; }
+
   .doc-image-wrap{
     border:1px solid var(--line);
     border-radius:8px;
@@ -750,6 +772,7 @@
     <a href="#bbh">BBH Programs</a>
     <a href="#orp">ORP</a>
     <a href="#action">In-Action</a>
+    <a href="#reports">Reports</a>
     <a href="#org">Org Chart</a>
   </nav>
 </header>
@@ -1196,6 +1219,16 @@
     <div class="doc-image-wrap">
       <img id="actionImage" alt="In-Action photo documentation for the selected month" loading="lazy">
     </div>
+  </section>
+
+  <section class="card" id="reports">
+    <h2 style="font-size:18px;">Reports</h2>
+    <p class="note" style="margin-top:0;margin-bottom:14px;">Accomplishment reports from the Curriculum Implementation Division. Opens in a new tab.</p>
+    <a class="report-link" href="https://depedph-my.sharepoint.com/:w:/g/personal/crisel_nojadera_deped_gov_ph/IQDqNc_1UFJjTa78SeK0hh_VAU0VCH7HHrBqPvEFzxcS3no?e=pS9nGk" target="_blank" rel="noopener noreferrer">
+      <span class="ico" aria-hidden="true">📄</span>
+      <span>CURRICULUM IMPLEMENTATION DIVISION MID-YEAR ACCOMPLISHMENT REPORT</span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
   </section>
 
   <section class="orgchart" id="org">
